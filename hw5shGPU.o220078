@@ -1,0 +1,53 @@
+setting asax scratch directory
+ 
+============================================================
+=====         Summary of your GPU job                  =====
+============================================================
+  The script file is: hw5.sh
+  The time limit is 01:00:00 HH:MM:SS.
+  The target directory is: /home/ualclsd0142/HW5
+  The working directory is:  /scratch-local/ualclsd0142.hw5shGPU.220078.asax-pbs1
+  The memory limit is: 1gb
+  The job will start running after: 202412051242.36
+  Job Name: hw5shGPU
+  Queue: -q classgpu
+  Constraints: 
+  Using  1  cores on master node  asaxg002.asc.edu
+  Node list:  asaxg002.asc.edu
+  Cores:  1
+  Command typed:
+/scripts/run_gpu hw5.sh     
+  Queue submit command:
+qsub -q classgpu -j oe -N hw5shGPU -a 202412051242.36 -r n -M mhchowdhury@crimson.ua.edu -l walltime=01:00:00 -l select=1:ngpus=1:ncpus=1:mpiprocs=1:mem=1000mb 
+ 
+Thu Dec  5 12:42:40 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.28.03              Driver Version: 560.28.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:81:00.0 Off |                    0 |
+| N/A   25C    P0             48W /  400W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+dimGrid: 625 625 1. dimBlock: 8 8 1
+----------------------------------
+Baseline  GPU time is taken=2000.262573 ms for size=5000 iterations=5000
+dimGrid: 1250 1250 1. dimBlock: 8 8 1
+----------------------------------
+Baseline  GPU time is taken=8951.410156 ms for size=10000 iterations=5000
+----------------------------------
+shared GPU time is taken=1445.186768 ms for size=5000 iterations=5000
+----------------------------------
+shared GPU time is taken=5632.427734 ms for size=10000 iterations=5000
+Cgroup mem limit exceeded: 
